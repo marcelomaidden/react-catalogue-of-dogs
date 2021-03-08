@@ -1,0 +1,25 @@
+:root {
+  --green-color: rgb(71 154 153);
+  --blue-color: rgb(102 154 204);
+  --black-color: rgb(51 51 51);
+  --red-color: rgb(155 27 13);
+  --orange-color: rgb(239 140 83);
+  --red-light-color: rgb(205 102 103);
+}
+
+#root {
+  height: 1vh;
+}
+
+.font-lilita-one {
+  font-family: 'Lilita One', cursive;
+}
+
+header,
+footer {
+  background-color: var(--green-color);
+}
+
+main {
+  height: 400px;
+}
