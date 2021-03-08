@@ -13,10 +13,12 @@ import About from './components/About';
 ReactDOM.render(
   <Router>
     <NavBar />
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/about" component={About} />
-    </Switch>
+    <main className='d-flex'>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </main>
     <Footer />
   </Router>,
   document.getElementById('root'),

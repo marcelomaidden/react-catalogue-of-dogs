@@ -7,12 +7,19 @@
   --red-light-color: rgb(205 102 103);
 }
 
+#root {
+  height: 1vh;
+}
+
 .font-lilita-one {
   font-family: 'Lilita One', cursive;
 }
 
-nav {
+header,
+footer {
   background-color: var(--green-color);
 }
 
-
+main {
+  height: 400px;
+}
