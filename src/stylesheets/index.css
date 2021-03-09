@@ -23,3 +23,13 @@ footer {
 main {
   min-height: 400px;
 }
+
+.photo-container {
+  height: 250px;
+}
+
+.photo {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}

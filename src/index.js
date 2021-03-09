@@ -23,6 +23,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/category/:id" component={Home} />
         </Switch>
       </main>
       <Footer />
