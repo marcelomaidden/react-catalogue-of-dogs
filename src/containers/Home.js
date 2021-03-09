@@ -10,8 +10,14 @@ const Home = ({ dogs, fetchDogs }) => {
 
   return (
     <>
-      <p>Home page</p>
-      <p>{dogs.loading ? 'Loading' : ''}</p>
+      {
+        dogs.loading ? (
+          <div className="spinner-border m-auto" role="status">
+            <span className="sr-only" />
+          </div>
+        )
+          : ''
+      }
       <p>{`${dogs.message}`}</p>
       <div className="d-flex flex-wrap">
         {dogs.list.map(dog => (
