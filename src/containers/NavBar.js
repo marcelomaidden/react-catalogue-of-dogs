@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../stylesheets/index.css';
-import CATEGORIES from '../actions/categories';
 import { setFilter } from '../actions';
 import '../stylesheets/NavBar.css';
+import Filter from '../components/Filter';
 
 const NavBar = ({ setFilter }) => {
   const handleClick = filter => {
@@ -30,18 +30,7 @@ const NavBar = ({ setFilter }) => {
           <button className="btn btn-danger rounded dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
           </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            {CATEGORIES.map(category => (
-              <Link
-                to={`/category/${category.id}`}
-                onClick={() => handleClick(category.url)}
-                className="dropdown-item"
-                key={category.id}
-              >
-                {category.name}
-              </Link>
-            ))}
-          </ul>
+          <Filter handleOnClick={handleClick} />
         </div>
       </nav>
     </header>
