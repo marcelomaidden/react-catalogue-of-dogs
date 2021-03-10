@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { asyncFetchDetail } from '../actions';
 import Photo from '../components/Photo';
 import Spinner from '../components/Spinner';
+import '../stylesheets/Detail.css';
 
 const Detail = ({ dogs, fetchDetail }) => {
   const [dog, setDog] = useState({ id: null, urls: { small: '' } });
@@ -40,7 +41,7 @@ const Detail = ({ dogs, fetchDetail }) => {
       <div className="d-flex flex-wrap">
         <div className="col-6"><Photo id={dogId} url={urls.small} /></div>
         <div className="col-6 d-flex flex-column photo-info">
-          <div><h4 className="h4">{description}</h4></div>
+          <div><h4 className="h6 font-lilita-one">{description}</h4></div>
           <div>{alt}</div>
         </div>
       </div>
