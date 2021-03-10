@@ -15,11 +15,14 @@
   font-family: 'Lilita One', cursive;
 }
 
-header,
-footer {
-  background-color: var(--green-color);
+main {
+  min-height: 400px;
+  background-color: #fff;
+  top: -50px;
+  width: 85%;
+  border-radius: 20px;
 }
 
-main {
-  height: 400px;
+.bg-green {
+  background-color: var(--green-color);
 }

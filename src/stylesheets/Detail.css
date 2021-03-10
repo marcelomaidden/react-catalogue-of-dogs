@@ -1,0 +1,10 @@
+.photo-info {
+  padding-left: 10px;
+}
+
+.photo-detail-container,
+.photo-detail {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
