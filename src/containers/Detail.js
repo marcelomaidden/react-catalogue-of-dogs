@@ -8,7 +8,7 @@ import Spinner from '../components/Spinner';
 import '../stylesheets/Detail.css';
 
 const Detail = ({ dogs, fetchDetail }) => {
-  const [dog, setDog] = useState({ id: null, urls: { small: '' } });
+  const [dog, setDog] = useState({ id: null, urls: { small: '' }, user: { name: '' } });
   const [loaded, setLoaded] = useState(false);
   const { dogId } = useParams();
   useEffect(() => {
@@ -21,15 +21,15 @@ const Detail = ({ dogs, fetchDetail }) => {
     }
   }, [loaded]);
 
-  const {
-    loading,
-  } = dogs;
+  const { loading } = dogs;
 
   const {
     urls,
     alt_description: alt,
     description,
+    user: author,
   } = dog;
+
   return (
     <>
       {
@@ -43,6 +43,10 @@ const Detail = ({ dogs, fetchDetail }) => {
         <div className="col-6 d-flex flex-column photo-info">
           <div><h4 className="h6 font-lilita-one">{description}</h4></div>
           <div>{alt}</div>
+          <div className="font-lilita-one">
+            <span>Photo by: </span>
+            <span>{author.name}</span>
+          </div>
         </div>
       </div>
     </>
