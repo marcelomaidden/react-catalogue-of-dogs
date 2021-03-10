@@ -22,6 +22,10 @@ const NavBar = ({ setFilter }) => {
         </span>
       </nav>
       <nav className="d-flex justify-content-between nav-links p-5 position-relative">
+        <ul className="list-unstyled d-flex font-lilita-one mx-auto">
+          <Link to="/" className="text-white text-decoration-none px-3">Home</Link>
+          <Link to="/about" className="text-white text-decoration-none">About</Link>
+        </ul>
         <div className="dropdown position-absolute drop-categories">
           <button className="btn btn-danger rounded dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
