@@ -23,10 +23,6 @@ main {
   border-radius: 20px;
 }
 
-footer {
-  background-image: linear-gradient(to right, rgba(51, 51, 51, 0.8) 75%, rgba(51, 51, 51, 0.3));
-}
-
 .bg-green {
   background-color: var(--green-color);
 }
