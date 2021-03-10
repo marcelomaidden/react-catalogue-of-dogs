@@ -25,6 +25,8 @@
 - JavaScript
 - Jest
 - React Testing Library
+- Redux
+- Redux thunk
 
 
 ## Getting Started
@@ -44,6 +46,12 @@ To get a local copy up and running follow these simple example steps.
 - Use `cd <file-path>`
 - Run `git clone https://github.com/marcelomaidden/react-catalogue-of-dogs`
 - Enter the project's folder `cd react-catalogue-of-dogs`
+- This projects uses the Unsplash API to get photos. 
+  In order to use it you need to create an account as a developer on their website [Unsplash developers](https://unsplash.com/developers). After create the account, kindly create an App [Unsplash APP](https://unsplash.com/oauth/applications)
+  to get the Acess Key.
+  Add the Acess Key on a .env file on the root folder of the project following the pattern
+  `REACT_APP_UNSPLASH_API_KEY=$API_KEY`. Change ${API_KEY} with your Acces Key from Unsplash.
+  
 
 
 To make any change,
