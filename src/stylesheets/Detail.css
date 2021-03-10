@@ -2,16 +2,9 @@
   padding-left: 10px;
 }
 
-.photo-detail-container, 
+.photo-detail-container,
 .photo-detail {
   object-fit: cover;
   width: 100%;
-}
-
-.photo-detail {
   height: auto;
-}
-
-.photo-detail-container {
-  height: auto;  
 }
