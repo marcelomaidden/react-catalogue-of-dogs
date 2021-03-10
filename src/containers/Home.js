@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { asyncFetchDogs, setPage } from '../actions';
+import Photo from '../components/Photo';
+import Spinner from '../components/Spinner';
 
 const Home = ({ dogs, fetchDogs, setPage }) => {
   const [filter, setFilter] = useState('dogs-human');
@@ -45,19 +47,21 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
         }
       </ul>
       {
-        loading ? (
-          <div className="spinner-border m-auto" role="status">
-            <span className="sr-only" />
-          </div>
-        )
+        loading ? (<Spinner />)
           : ''
       }
       <p>{`${message}`}</p>
       <div className="d-flex flex-wrap">
         {list.map(dog => (
-          <div className="photo-container col-12 col-md-4 p-2 mb-2" key={dog.id}>
-            <img className="photo" src={dog.urls.small} alt="Dog" />
-          </div>
+          <Link
+            key={dog.id}
+            to={
+              `/photos/${dog.id}`
+            }
+            className="col-12 col-md-4 p-2 mb-2"
+          >
+            <Photo key={dog.id} url={dog.urls.small} />
+          </Link>
         ))}
       </div>
     </>

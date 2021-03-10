@@ -10,12 +10,17 @@ export const fetchFailure = error => ({ type: FETCH_DOGS_FAILURE, error });
 export const setFilter = filter => ({ type: SET_FILTER, filter });
 export const setPage = page => ({ type: SET_PAGE, page });
 
-export const asyncFetchDogs = (filter, page) => (
+export const asyncFetchDogs = (filter, page, single = false) => (
   async dispatch => {
     dispatch(fetchDogs());
-    const searchPage = 'search/photos';
-    const criteria = `query=${filter}&page=${page}&per_page=9`;
-    const url = `https://api.unsplash.com/${searchPage}?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&${criteria}`;
+    let searchPage = 'search/photos';
+    let criteria = `&query=${filter}&page=${page}&per_page=9`;
+    if (single === true) {
+      searchPage = `photos/${filter}`;
+      criteria = '';
+    }
+
+    const url = `https://api.unsplash.com/${searchPage}?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}${criteria}`;
     return fetch(`${url}`)
       .then(result => result.json())
       .then(data => dispatch(fetchSuccess(data, filter)))
