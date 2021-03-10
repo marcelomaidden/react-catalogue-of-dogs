@@ -24,3 +24,19 @@
   width: 130px;
   height: auto;
 }
+
+.nav-links ul {
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .logo-container{ 
+    left: 10px;
+    top: 20px;
+  }
+  .nav-links ul {
+    position: relative;
+    top: 30px;
+    margin: 0;
+  }
+}

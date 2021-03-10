@@ -22,7 +22,7 @@ const NavBar = ({ setFilter }) => {
         </span>
       </nav>
       <nav className="d-flex justify-content-between nav-links p-5 position-relative">
-        <ul className="list-unstyled d-flex font-lilita-one mx-auto">
+        <ul className="list-unstyled d-flex font-lilita-one">
           <Link to="/" className="text-white text-decoration-none px-3">Home</Link>
           <Link to="/about" className="text-white text-decoration-none">About</Link>
         </ul>
