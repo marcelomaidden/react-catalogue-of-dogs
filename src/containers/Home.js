@@ -59,7 +59,7 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
             }
             className="col-12 col-md-4 p-2 mb-2"
           >
-            <Photo key={dog.id} id={dog.id} url={dog.urls.small} />
+            <Photo photoContainer="photo-container" photoStyle="photo" key={dog.id} id={dog.id} url={dog.urls.small} />
           </Link>
         ))}
       </div>
