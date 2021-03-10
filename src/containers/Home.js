@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { asyncFetchDogs, setPage } from '../actions';
 import Photo from '../components/Photo';
 import Spinner from '../components/Spinner';
+import '../stylesheets/Photo.css';
 
 const Home = ({ dogs, fetchDogs, setPage }) => {
   const [filter, setFilter] = useState('dogs-human');
@@ -20,7 +21,6 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
 
   const {
     list,
-    message,
     loading,
   } = dogs;
 
@@ -50,7 +50,6 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
         loading ? (<Spinner />)
           : ''
       }
-      <p>{`${message}`}</p>
       <div className="d-flex flex-wrap">
         {list.map(dog => (
           <Link
@@ -60,7 +59,7 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
             }
             className="col-12 col-md-4 p-2 mb-2"
           >
-            <Photo key={dog.id} url={dog.urls.small} />
+            <Photo key={dog.id} id={dog.id} url={dog.urls.small} />
           </Link>
         ))}
       </div>
@@ -75,7 +74,6 @@ Home.propTypes = {
       PropTypes.object,
     ]).isRequired,
     loading: PropTypes.bool,
-    message: PropTypes.string,
     filter: PropTypes.string,
     page: PropTypes.oneOfType(
       [PropTypes.string, PropTypes.number],

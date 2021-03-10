@@ -2,30 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { asyncFetchDogs } from '../actions';
+import { asyncFetchDetail } from '../actions';
 import Photo from '../components/Photo';
 import Spinner from '../components/Spinner';
 
-const Detail = ({ dogs, fetchDogs }) => {
+const Detail = ({ dogs, fetchDetail }) => {
   const [dog, setDog] = useState({ id: null, urls: { small: '' } });
   const [loaded, setLoaded] = useState(false);
   const { dogId } = useParams();
   useEffect(() => {
     if (loaded === false) {
-      fetchDogs(dogId, 1)
-        .then(({ dogs }) => {
+      fetchDetail(dogId, 1)
+        .then(({ dog }) => {
           setLoaded(true);
-          setDog(dogs);
+          setDog(dog);
         });
     }
   }, [loaded]);
 
   const {
-    message,
     loading,
   } = dogs;
 
-  const { id, urls } = dog;
+  const {
+    urls,
+    alt_description: alt,
+    description,
+  } = dog;
   return (
     <>
       {
@@ -34,9 +37,12 @@ const Detail = ({ dogs, fetchDogs }) => {
         )
           : ''
       }
-      <p>{`${message}`}</p>
       <div className="d-flex flex-wrap">
-        <Photo key={id} url={urls.small} />
+        <div className="col-6"><Photo id={dogId} url={urls.small} /></div>
+        <div className="col-6 d-flex flex-column photo-info">
+          <div><h4 className="h4">{description}</h4></div>
+          <div>{alt}</div>
+        </div>
       </div>
     </>
   );
@@ -45,10 +51,9 @@ const Detail = ({ dogs, fetchDogs }) => {
 Detail.propTypes = {
   dogs: PropTypes.shape({
     loading: PropTypes.bool,
-    message: PropTypes.string,
     filter: PropTypes.string,
   }).isRequired,
-  fetchDogs: PropTypes.func.isRequired,
+  fetchDetail: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -56,7 +61,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDogs: (filter, page) => dispatch(asyncFetchDogs(filter, page, true)),
+  fetchDetail: id => dispatch(asyncFetchDetail(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
