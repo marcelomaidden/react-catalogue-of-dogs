@@ -1,0 +1,26 @@
+.nav-1 {
+  background-color: var(--green-color);
+  height: 50px;
+}
+
+.nav-links {
+  height: 150px;
+  background-image: linear-gradient(to right, rgba(51, 51, 51, 0.8) 75%, rgba(51, 51, 51, 0.3));
+}
+
+.drop-categories {
+  right: 10px;
+}
+
+.logo-container {
+  width: 200px;
+  overflow: hidden;
+  z-index: 1000;
+  position: absolute;
+  left: 100px;
+}
+
+.logo-container img {
+  width: 130px;
+  height: auto;
+}

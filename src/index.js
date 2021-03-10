@@ -19,7 +19,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <NavBar />
-      <main className="d-flex flex-column">
+      <main className="d-flex flex-column position-relative p-5 mx-auto">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />

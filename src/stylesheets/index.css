@@ -15,13 +15,12 @@
   font-family: 'Lilita One', cursive;
 }
 
-header,
-footer {
-  background-color: var(--green-color);
-}
-
 main {
   min-height: 400px;
+  background-color: #FFF;
+  top: -50px;
+  width: 85%;
+  border-radius: 20px;
 }
 
 .photo-container {
@@ -32,4 +31,12 @@ main {
   object-fit: cover;
   width: 100%;
   height: 250px;
+}
+
+footer {
+  background-image: linear-gradient(to right, rgba(51, 51, 51, 0.8) 75%, rgba(51, 51, 51, 0.3));
+}
+
+.bg-green {
+  background-color: var(--green-color);
 }

@@ -13,7 +13,6 @@ export const setPage = page => ({ type: SET_PAGE, page });
 export const asyncFetchDogs = (filter, page) => (
   async dispatch => {
     dispatch(fetchDogs());
-    console.log(page);
     const searchPage = 'search/photos';
     const criteria = `query=${filter}&page=${page}`;
     const url = `https://api.unsplash.com/${searchPage}?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}&${criteria}`;

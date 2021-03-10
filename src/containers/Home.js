@@ -32,7 +32,7 @@ const Home = ({ dogs, fetchDogs, setPage }) => {
             <li key={page}>
               <Link
                 to="/"
-                className="btn bg-success m-2"
+                className="btn bg-green m-2"
                 onClick={
                   () => setPage(page)
                 }
