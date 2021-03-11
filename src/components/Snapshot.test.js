@@ -1,13 +1,13 @@
-import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import React from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
+import { act } from 'react-dom/test-utils';
 
-import Spinner from "./Spinner";
+import Spinner from './Spinner';
 
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
-  container = document.createElement("div");
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -18,12 +18,12 @@ afterEach(() => {
   container = null;
 });
 
-it("should render a Spinner component", () => {
+it('should render a Spinner component', () => {
   act(() => {
     render(
-      <Spinner />, 
-      container
+      <Spinner />,
+      container,
     );
   });
-  expect(container.innerHTML).toMatchSnapshot(); 
+  expect(container.innerHTML).toMatchSnapshot();
 });

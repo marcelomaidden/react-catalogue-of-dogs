@@ -1,13 +1,13 @@
-import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import React from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
+import { act } from 'react-dom/test-utils';
 
-import Footer from "./Footer";
+import Footer from './Footer';
 
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
-  container = document.createElement("div");
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -18,13 +18,13 @@ afterEach(() => {
   container = null;
 });
 
-it("should render a Footer component", () => {
+it('should render a Footer component', () => {
   act(() => {
     render(
-      <Footer />, 
-      container
+      <Footer />,
+      container,
     );
   });
 
-  expect(container.innerHTML).toMatchSnapshot(); 
+  expect(container.innerHTML).toMatchSnapshot();
 });
