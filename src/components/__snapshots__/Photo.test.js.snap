@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a Photo component 1`] = `"<div class=\\"photo-container col-12\\"><img class=\\"photo\\" src=\\"https://images.unsplash.com/photo-1548199973-03cce0bbc87b?crop=entropy\\\\u0026cs=tinysrgb\\\\u0026fit=max\\\\u0026fm=jpg\\\\u0026ixid=Mnw1MTAzN3wwfDF8c2VhcmNofDF8fGRvZ3N8ZW58MHx8fHwxNjE1MzkxNjUx\\\\u0026ixlib=rb-1.2.1\\\\u0026q=80\\\\u0026w=400\\" alt=\\"Dog\\"></div>"`;
