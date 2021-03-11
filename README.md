@@ -18,9 +18,9 @@
 
 ## Project videos
 
-(https://www.loom.com/share/ddd3700fad3b4cea96b4cfd158495a81)
+https://www.loom.com/share/ddd3700fad3b4cea96b4cfd158495a81
 
-(https://www.loom.com/share/cb1d17d46c594d2eae5751f90effb692)
+https://www.loom.com/share/cb1d17d46c594d2eae5751f90effb692
 ## Built With
 
 - React
